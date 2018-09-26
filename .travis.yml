@@ -1,23 +1,20 @@
 language: python
 sudo: false
 python: 3.5
-
 cache:
   pip: true
-
 git:
   depth: false
-
 branches:
   except:
-    - "gh-pages"
-
+  - gh-pages
 before_install:
-  - pip install --upgrade pip setuptools wheel
-
+- pip install --upgrade pip setuptools wheel
 install:
-  - pip install --upgrade memote
-
+- pip install --upgrade memote
 script:
-  - git checkout "${TRAVIS_BRANCH}"
-  - ./scripts/travis_deploy.sh
+- git checkout "${TRAVIS_BRANCH}"
+- ./scripts/travis_deploy.sh
+env:
+  global:
+    secure: NL+nKgm/07z0CS7UZ7QWdoMGgR1AheRr3U/NsP99m75g0hW44IWCVegjSwcp62TV47NAXSBWKK/XAeznUPvIwIzszhD7LZwdobN/Js6W1J6bEG9jE5MYXvdDOGjkt99VhayxtMqGVWifVtHnUnI1n7BOdnBObfpGkAicuM2sMfHGSpGWvzDozDQsPGLKEZ21hoIhf6v+O6/1KBDwVcQmavrNZVHoYP0YlOCL4gTZac8dRFTWHKnVN7Ld0Aw68RDi+1nS+wTRP19VdZkkGhx7vzbOaNIKHadqjekXZo+I1dindFOdp+zyUugsh+cwt/THQ7+sTOR7RJ1Oz+2KN1kGwECnrDds4L4V1jEY4hUfYGqrsKYfnUygelC3n8/Oeg5eq2EFgWItXEUERV2eQgdlMAlQIal4GXKx+Xo0ki4W0lIIsKEKjqTIMscQGfHNyeL9nu188ONWEM9mUMq21q68zCyduuxgmb8JAlLp7nZlbT+cH8LCVM0fj6ZK74DzVaP7Zm/NXhngQwdGK5aLYgVVZucZ67pYd/2+8+9l1MZCIh2PMkyPcXf1UescmMUKvPy7faNA97VWlWAUKB1q1upmkFteRU6ugQM5DLL1r0In0ctT1cp5sem/AZwl6L659OeyABvoDJweph5fUm4PKfba2lJXStnmzWKmpvjh8k9fQzI=
